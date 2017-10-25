@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectList has the expected html structure 1`] = `
+<ul
+  class="project-list"
+>
+  <li
+    class="project card"
+  >
+    <!---->
+  </li>
+</ul>
+`;
