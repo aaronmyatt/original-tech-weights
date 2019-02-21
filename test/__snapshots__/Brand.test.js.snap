@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Brand has the expected html structure 1`] = `
-<h3
-  class="brand"
->
-  Test
-</h3>
-`;
