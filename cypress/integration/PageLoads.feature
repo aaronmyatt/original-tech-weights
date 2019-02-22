@@ -5,4 +5,4 @@ Feature: The page loads
   @focus
   Scenario: Loads home page
     Given I open the home page
-    Then I see 'Vue.js App' in the title
+    Then I see 'Tech Weights' in the title
