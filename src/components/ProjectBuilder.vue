@@ -15,6 +15,10 @@
   //  on the parent component. So, this should be the first step, but with an open
   //  acknowledgement that this will be replaced with Vuex/a message bus in a further iteration
 
+  // @todo #7:30m/LEARN component-component message passing
+  //  how to notify sibling components that an event occurring in one should
+  //  trigger an event in the other
+
   export default {
     name: 'ProjectBuilder',
     props: {},
