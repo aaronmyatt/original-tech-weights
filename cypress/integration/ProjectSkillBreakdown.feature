@@ -10,7 +10,6 @@ Feature: As a user I want to create a project skill breakdown So that I can show
 
   User Story 1
 
-  @focus
   Scenario: User first arrives on the page
     Given a user on the home page
     Then the ".create_project_button" will be visible
