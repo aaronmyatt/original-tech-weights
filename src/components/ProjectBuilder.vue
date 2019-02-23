@@ -10,6 +10,11 @@
 
   // @todo #4:30m/DEV create SkillList component
 
+  // @todo #7:30m/DEV implement Create Project on click adds a "project_item"
+  //  to the ProjectsList. My intuition tells me I can just communicate via state
+  //  on the parent component. So, this should be the first step, but with an open
+  //  acknowledgement that this will be replaced with Vuex/a message bus in a further iteration
+
   export default {
     name: 'ProjectBuilder',
     props: {},
