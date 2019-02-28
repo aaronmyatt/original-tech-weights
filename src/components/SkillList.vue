@@ -1,9 +1,11 @@
 <template>
-  <ol class="skill_list"></ol>
+  <ol class="skill-list">
+    <li>Skill #1</li>
+  </ol>
 </template>
 
 <script>
-  // @todo #4:30m/DEV implement Add Skill on click adds a "project_item" to ".skill_list
+  // @todo #4:30m/DEV implement Add Skill on click adds a "project-item" to ".skill-list
 
   // @todo #4:30m/DEV create Skill component
 

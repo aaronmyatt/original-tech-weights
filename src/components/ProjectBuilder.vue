@@ -1,16 +1,24 @@
 <template>
-  <button class="create_project_button">Create Project</button>
+  <div>
+    <form action="">
+      <label for="project-name-field">Project Name</label>
+      <input id="project-name-field" type="text">
+
+      <label for="project-year-field">Project Year</label>
+      <input id="project-year-field" type="text">
+
+      <label for="project-status-field">Project Status</label>
+      <input id="project-status-field" type="text">
+
+      <SkillList/>
+    </form>
+
+    <button class="create-project-button">Create Project</button>
+  </div>
 </template>
 
 <script>
-  // @todo #4:30m/DEV add project builder form fields
-  //  including: Name, Year of Project, and Completed Status
-  //  https://github.com/aaronmyatt/tech-weights/wiki
-  //  don't forget to ignore it before pushing
-
-  // @todo #4:30m/DEV create SkillList component
-
-  // @todo #7:30m/DEV implement Create Project on click adds a "project_item"
+  // @todo #7:30m/DEV implement Create Project on click adds a "project-item"
   //  to the ProjectsList. My intuition tells me I can just communicate via state
   //  on the parent component. So, this should be the first step, but with an open
   //  acknowledgement that this will be replaced with Vuex/a message bus in a further iteration
@@ -19,8 +27,22 @@
   //  how to notify sibling components that an event occurring in one should
   //  trigger an event in the other
 
+  // @todo #5:30m/DEV add validation for project year
+  //  restrict formatting to '2019' style
+
+  // @todo #5:30m/DEV add validation for project status
+  //  restrict status choices to Complete/In Progress/Retired
+  //  this should be a select/dropdown field then
+
+  // @todo #5:30m/DEV add form submit method
+  //  probably need to pull .create-project-button into the form
+
+
+  import SkillList from './SkillList.vue';
+
   export default {
     name: 'ProjectBuilder',
+    components: {SkillList},
     props: {},
   };
 </script>
