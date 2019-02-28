@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "e2e": "vue-cli-service test:e2e -e TAGS='not @ignore'"
   },
   "dependencies": {
     "vue": "^2.6.6"
