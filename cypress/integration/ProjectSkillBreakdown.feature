@@ -1,7 +1,3 @@
-# @todo #4:30m/DEV test user adds new skill
-#  https://github.com/aaronmyatt/tech-weights/wiki
-#  don't forget to ignore it before pushing
-
 Feature: As a user I want to create a project skill breakdown So that I can show which skills I used during that project
 
   User Story 1
@@ -15,3 +11,10 @@ Feature: As a user I want to create a project skill breakdown So that I can show
     Given a user on the home page
     When they click ".create_project_button"
     Then the ".projects_list" will have one child element
+
+  @ignore
+  Scenario: User clicks add new skill
+    Given a user on the home page
+    Given an active project form
+    When they click ".add_new_skill_button"
+    Then the ".skills_list" will have one child element

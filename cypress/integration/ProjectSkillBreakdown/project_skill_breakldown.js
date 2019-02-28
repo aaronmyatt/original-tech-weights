@@ -6,8 +6,16 @@ Given('a user on the home page', () => {
   cy.visit(url);
 });
 
+Given('an active project form', () => {
+  cy.get(".create_project_button").click()
+});
+
 When('they click {string}', (cls) => {
   cy.get(cls).click()
+});
+
+Then(`the {string} will have one child element`, (cls) => {
+  cy.get(cls).should('have.length', 1);
 });
 
 Then(`the {string} will have one child element`, (cls) => {
