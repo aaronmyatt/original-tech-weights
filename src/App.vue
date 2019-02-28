@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import ProjectBuilder from './components/ProjectBuilder';
-  import ProjectsList from "./components/ProjectsList";
+  import ProjectBuilder from './components/ProjectBuilder.vue';
+  import ProjectsList from './components/ProjectsList.vue';
 
   export default {
     name: 'app',
