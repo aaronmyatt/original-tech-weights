@@ -1,5 +1,5 @@
 <template>
-  <ol class="projects_list"></ol>
+  <ol class="projects-list"></ol>
 </template>
 
 <script>
