@@ -7,6 +7,9 @@
 </template>
 
 <script>
+// @todo #19:30m/DEV implement a Project component
+//  this will render project data passed over by the ProjectBuilder
+
 export default {
   name: 'ProjectsList',
   props: {

@@ -2,13 +2,13 @@
   <div>
     <form action="">
       <label for="project-name-field">Project Name</label>
-      <input id="project-name-field" type="text">
+      <input id="project-name-field" type="text" v-model="name">
 
       <label for="project-year-field">Project Year</label>
-      <input id="project-year-field" type="text">
+      <input id="project-year-field" type="text" v-model="year">
 
       <label for="project-status-field">Project Status</label>
-      <input id="project-status-field" type="text">
+      <input id="project-status-field" type="text" v-model="status">
 
       <SkillList/>
     </form>
@@ -24,7 +24,8 @@
 //  restrict status choices to Complete/In Progress/Retired
 //  this should be a select/dropdown field then
 
-// @todo #5:30m/DEV pass form field data to project list
+// @todo #19:30m/DEV add v-on to SkillList
+//  this will require some sort of callback method to populate the `this.skills`
 
 
 import SkillList from './SkillList.vue';
@@ -33,6 +34,14 @@ export default {
   name: 'ProjectBuilder',
   components: { SkillList },
   props: {},
+  data: () => {
+    return {
+      name: "",
+      year: "",
+      status: "",
+      skills: []
+    }
+  },
   methods: {
     createProject() {
       this.$emit('create-project');
