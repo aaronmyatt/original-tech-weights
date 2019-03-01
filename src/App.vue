@@ -9,10 +9,10 @@
 </template>
 
 <script>
-  import ProjectBuilder from './components/ProjectBuilder.vue';
-  import ProjectsList from './components/ProjectsList.vue';
+import ProjectBuilder from './components/ProjectBuilder.vue';
+import ProjectsList from './components/ProjectsList.vue';
 
-  export default {
+export default {
   name: 'app',
   components: {
     ProjectsList,

@@ -17,15 +17,6 @@
 </template>
 
 <script>
-// @todo #7:30m/DEV implement Create Project on click adds a "project-item"
-//  to the ProjectsList. My intuition tells me I can just communicate via state
-//  on the parent component. So, this should be the first step, but with an open
-//  acknowledgement that this will be replaced with Vuex/a message bus in a further iteration
-
-// @todo #7:30m/LEARN component-component message passing
-//  how to notify sibling components that an event occurring in one should
-//  trigger an event in the other
-
 // @todo #5:30m/DEV add validation for project year
 //  restrict formatting to '2019' style
 
