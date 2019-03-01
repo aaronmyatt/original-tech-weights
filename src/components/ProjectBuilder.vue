@@ -24,8 +24,7 @@
 //  restrict status choices to Complete/In Progress/Retired
 //  this should be a select/dropdown field then
 
-// @todo #5:30m/DEV add form submit method
-//  probably need to pull .create-project-button into the form
+// @todo #5:30m/DEV pass form field data to project list
 
 
 import SkillList from './SkillList.vue';
