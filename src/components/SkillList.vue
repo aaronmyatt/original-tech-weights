@@ -21,9 +21,6 @@
 // @todo #4:30m/DEV SkillList should aggregate the skill "weights" and present them
 //  I am imagining all weights should total to no more than 100%
 
-// @todo #19:30m/DEV $emit event everytime a new Skill is added to the list
-//  this way the parent project can catch, save and recreate the list later
-
 export default {
   name: 'SkillList',
   props: {},
@@ -38,8 +35,7 @@ export default {
         name: this.skillName,
         weight: this.skillWeight,
       });
-      // prevents page refresh
-      return false;
+      this.$emit('new-skill-added', this.skills);
     },
   },
 };
