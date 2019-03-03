@@ -1,5 +1,7 @@
 # tech-weights
 
+[![PDD status](http://www.0pdd.com/svg?name=aaronmyatt/tech-weights)](http://www.0pdd.com/svg?name=aaronmyatt/tech-weights)
+
 ## Project setup
 ```
 yarn install
