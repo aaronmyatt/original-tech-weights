@@ -5,7 +5,7 @@
     <label for="skill-weight-input">Skill</label>
     <input id="skill-weight-input" type="text" v-model="skillWeight">
     <button @click="addSkill()" type="button"> Add Skill </button>
-    <ol class="skill-list" v-for="skill in skills">
+    <ol :key="index" class="skill-list" v-for="(skill, index) in skills">
       <li class="skill-item">{{ skill.name }} | {{ skill.weight }}</li>
     </ol>
   </div>
@@ -27,13 +27,11 @@
 export default {
   name: 'SkillList',
   props: {},
-  data: () => {
-    return {
-      skills: [],
-      skillName: "",
-      skillWeight: 0,
-    }
-  },
+  data: () => ({
+    skills: [],
+    skillName: '',
+    skillWeight: 0,
+  }),
   methods: {
     addSkill() {
       this.skills.push({
