@@ -24,8 +24,6 @@
 //  restrict status choices to Complete/In Progress/Retired
 //  this should be a select/dropdown field then
 
-// @todo #22:30m/DEV pass project data in $emit
-
 import SkillList from './SkillList.vue';
 
 export default {
@@ -40,10 +38,20 @@ export default {
   }),
   methods: {
     createProject() {
-      this.$emit('create-project');
+      this.$emit('create-project', this.project);
     },
     updateSkills(skills) {
       this.skills = skills;
+    },
+  },
+  computed: {
+    project() {
+      return {
+        name: this.name,
+        year: this.year,
+        status: this.status,
+        skills: this.skills,
+      };
     },
   },
 };

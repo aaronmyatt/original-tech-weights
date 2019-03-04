@@ -10,6 +10,8 @@
 // @todo #19:30m/DEV implement a Project component
 //  this will render project data passed over by the ProjectBuilder
 
+// @todo #26:30m/DEV render project as html, not an object
+
 export default {
   name: 'ProjectsList',
   props: {

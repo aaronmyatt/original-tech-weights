@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Tech Weights</h1>
-    <ProjectBuilder @create-project="createProject()"/>
+    <ProjectBuilder @create-project="createProject"/>
     <ProjectsList :projects="projects"/>
 
 
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import ProjectBuilder from './components/ProjectBuilder.vue';
-import ProjectsList from './components/ProjectsList.vue';
+  import ProjectBuilder from './components/ProjectBuilder.vue';
+  import ProjectsList from './components/ProjectsList.vue';
 
-export default {
+  export default {
   name: 'app',
   components: {
     ProjectsList,
@@ -24,8 +24,8 @@ export default {
     };
   },
   methods: {
-    createProject() {
-      this.projects.push('aproject!');
+    createProject(project) {
+      this.projects.push(project);
     },
   },
 };
