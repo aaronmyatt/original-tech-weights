@@ -3,8 +3,6 @@
     <h1>Tech Weights</h1>
     <ProjectBuilder @create-project="createProject"/>
     <ProjectsList :projects="projects"/>
-
-
   </div>
 </template>
 
