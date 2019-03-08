@@ -6,7 +6,7 @@
 
       <label for="project-year-field">Project Year</label>
       <select id="project-year-field" v-model="year">
-        <option :key="year" :value="year" v-for="year in years"> {{ year }}</option>
+        <option :key="year" :value="year" v-for="year in years"> {{ year }} </option>
       </select>
 
       <label for="project-status-field">Project Status</label>
@@ -19,9 +19,6 @@
 </template>
 
 <script>
-// @todo #14:30m/DEV select current year by default
-//  I can probably set data.year to new Date().getFullYear();
-
 // @todo #5:30m/DEV add validation for project status
 //  restrict status choices to Complete/In Progress/Retired
 //  this should be a select/dropdown field then
@@ -34,7 +31,7 @@ export default {
   props: {},
   data: () => ({
     name: '',
-    year: '',
+    year: new Date().getFullYear(),
     status: '',
     skills: [],
   }),
@@ -56,14 +53,14 @@ export default {
       };
     },
     years() {
-      let years = [];
+      const years = [];
       const now = new Date();
       const currentYear = now.getFullYear();
-      for (let year = 1900; year !== currentYear+1; year += 1){
+      for (let year = 1900; year !== currentYear + 1; year += 1) {
         years.unshift(year);
       }
       return years;
-    }
+    },
   },
 };
 </script>
