@@ -1,7 +1,14 @@
 <template>
   <div>
-    <ol :key="index" class="projects-list" v-for="(project, index) in projects">
-      {{ index }} : {{ project }}
+    <ol>
+      <li :key="index" class="projects-list" v-for="(project, index) in projects">
+        <ul>
+          <li>{{ project.name }}</li>
+          <li>{{ project.status }}</li>
+          <li>{{ project.skills }}</li>
+          <li>{{ project.year }}</li>
+        </ul>
+      </li>
     </ol>
   </div>
 </template>
@@ -9,8 +16,6 @@
 <script>
 // @todo #19:30m/DEV implement a Project component
 //  this will render project data passed over by the ProjectBuilder
-
-// @todo #26:30m/DEV render project as html, not an object
 
 export default {
   name: 'ProjectsList',
