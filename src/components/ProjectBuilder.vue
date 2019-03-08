@@ -10,7 +10,9 @@
       </select>
 
       <label for="project-status-field">Project Status</label>
-      <input id="project-status-field" type="text" v-model="status">
+      <select id="project-status-field" v-model="status">
+        <option :key="status" :value="status" v-for="status in statusChoices"> {{ status }} </option>
+      </select>
 
       <SkillList @new-skill-added="updateSkills"/>
     </form>
@@ -19,20 +21,22 @@
 </template>
 
 <script>
-// @todo #5:30m/DEV add validation for project status
-//  restrict status choices to Complete/In Progress/Retired
-//  this should be a select/dropdown field then
 
-import SkillList from './SkillList.vue';
+  import SkillList from './SkillList.vue';
 
-export default {
+  export default {
   name: 'ProjectBuilder',
   components: { SkillList },
   props: {},
   data: () => ({
     name: '',
     year: new Date().getFullYear(),
-    status: '',
+    status: 'Complete',
+    statusChoices: [
+      'Complete',
+      'In Progress',
+      'Retired'
+    ],
     skills: [],
   }),
   methods: {
