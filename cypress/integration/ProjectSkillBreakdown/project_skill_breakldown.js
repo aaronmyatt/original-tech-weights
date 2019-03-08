@@ -7,7 +7,7 @@ Given('a user on the home page', () => {
 });
 
 Given('an active project form', () => {
-  cy.get(".create-project-button").click()
+  cy.get('.create-project-button').click()
 });
 
 When('they click {string}', (cls) => {
