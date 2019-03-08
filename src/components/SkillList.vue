@@ -4,9 +4,11 @@
     <input id="skill-name-input" type="text" v-model="skillName">
     <label for="skill-weight-input">Skill</label>
     <input id="skill-weight-input" type="text" v-model="skillWeight">
-    <button @click="addSkill()" type="button"> Add Skill </button>
-    <ol :key="index" class="skill-list" v-for="(skill, index) in skills">
-      <li class="skill-item">{{ skill.name }} | {{ skill.weight }}</li>
+    <button @click="addSkill()" type="button"> Add Skill</button>
+    <ol class="skill-list">
+      <li :key="index" class="skill-item" v-for="(skill, index) in skills">
+        {{ skill.name }} | {{ skill.weight }}
+      </li>
     </ol>
   </div>
 </template>

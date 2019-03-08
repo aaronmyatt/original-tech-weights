@@ -6,12 +6,12 @@
 
       <label for="project-year-field">Project Year</label>
       <select id="project-year-field" v-model="year">
-        <option :key="year" :value="year" v-for="year in years"> {{ year }} </option>
+        <option :key="year" :value="year" v-for="year in years"> {{ year }}</option>
       </select>
 
       <label for="project-status-field">Project Status</label>
       <select id="project-status-field" v-model="status">
-        <option :key="status" :value="status" v-for="status in statusChoices"> {{ status }} </option>
+        <option :key="status" :value="status" v-for="status in statusChoices"> {{ status }}</option>
       </select>
 
       <SkillList @new-skill-added="updateSkills"/>
@@ -35,12 +35,14 @@
     statusChoices: [
       'Complete',
       'In Progress',
-      'Retired'
+      'Retired',
     ],
     skills: [],
   }),
   methods: {
     createProject() {
+      // @todo #1:30m/DEV skill list should be emptied on creation
+
       this.$emit('create-project', this.project);
     },
     updateSkills(skills) {
