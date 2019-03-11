@@ -23,9 +23,16 @@
 // @todo #4:30m/DEV SkillList should aggregate the skill "weights" and present them
 //  I am imagining all weights should total to no more than 100%
 
+// @todo #29:30m/DEV add-new-skill-button should be triggered by enter key
+
 export default {
   name: 'SkillList',
-  props: {},
+  props: {
+    skills: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data: () => ({
     skills: [],
     skillName: '',
@@ -37,7 +44,7 @@ export default {
         name: this.skillName,
         weight: this.skillWeight,
       });
-      this.$emit('new-skill-added', this.skills);
+      this.$emit('update:skills', this.skills);
     },
   },
 };

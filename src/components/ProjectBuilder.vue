@@ -14,17 +14,20 @@
         <option :key="status" :value="status" v-for="status in statusChoices"> {{ status }}</option>
       </select>
 
-      <SkillList @new-skill-added="updateSkills"/>
+      <SkillList
+        :skills.sync="skills"
+      />
     </form>
     <button @click="createProject" class="create-project-button">Create Project</button>
   </div>
 </template>
 
 <script>
+// @todo #29:30m/DEV create-project-button should be triggered by enter key
 
-  import SkillList from './SkillList.vue';
+import SkillList from './SkillList.vue';
 
-  export default {
+export default {
   name: 'ProjectBuilder',
   components: { SkillList },
   props: {},
@@ -41,12 +44,8 @@
   }),
   methods: {
     createProject() {
-      // @todo #1:30m/DEV skill list should be emptied on creation
-
       this.$emit('create-project', this.project);
-    },
-    updateSkills(skills) {
-      this.skills = skills;
+      this.skills = [];
     },
   },
   computed: {
