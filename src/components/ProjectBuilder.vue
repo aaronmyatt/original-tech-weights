@@ -2,7 +2,7 @@
   <div>
     <form action="">
       <label for="project-name-field">Project Name</label>
-      <input id="project-name-field" type="text" v-model="name">
+      <input @keyup.enter="createProject()" id="project-name-field" type="text" v-model="name">
 
       <label for="project-year-field">Project Year</label>
       <select id="project-year-field" v-model="year">
@@ -18,16 +18,16 @@
         :skills.sync="skills"
       />
     </form>
-    <button @click="createProject" class="create-project-button">Create Project</button>
+    <button @click="createProject" class="create-project-button" type="submit">
+      Create Project
+    </button>
   </div>
 </template>
 
 <script>
-// @todo #29:30m/DEV create-project-button should be triggered by enter key
+  import SkillList from './SkillList.vue';
 
-import SkillList from './SkillList.vue';
-
-export default {
+  export default {
   name: 'ProjectBuilder',
   components: { SkillList },
   props: {},
