@@ -11,7 +11,4 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-// @todo #1:30m/DEV drop cucumber preprocessor in favour of default cypress
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
-module.exports = (on) => {};
+module.exports = () => {};

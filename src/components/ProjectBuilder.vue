@@ -25,9 +25,12 @@
 </template>
 
 <script>
-  import SkillList from './SkillList.vue';
+// @todo #25:30m/DEV prevent project creation until skill weights equal 100
 
-  export default {
+
+import SkillList from './SkillList.vue';
+
+export default {
   name: 'ProjectBuilder',
   components: { SkillList },
   props: {},
