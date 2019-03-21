@@ -1,12 +1,32 @@
 <template>
   <div>
     <label for="skill-name-input"> Skill </label>
-    <input @keyup.enter="addSkill()" id="skill-name-input" type="text" v-model="skillName">
+    <input
+      id="skill-name-input"
+      v-model="skillName"
+      type="text"
+      @keyup.enter="addSkill()"
+    >
     <label for="skill-weight-input"> Skill </label>
-    <input @keyup.enter="addSkill()" id="skill-weight-input" type="text" v-model="skillWeight">
-    <button @click="addSkill()" class="add-new-skill-button" type="button"> Add Skill </button>
+    <input
+      id="skill-weight-input"
+      v-model="skillWeight"
+      type="text"
+      @keyup.enter="addSkill()"
+    >
+    <button
+      class="add-new-skill-button"
+      type="button"
+      @click="addSkill()"
+    >
+      Add Skill
+    </button>
     <ol class="skills-list">
-      <li :key="index" class="skill-item" v-for="(skill, index) in skills">
+      <li
+        v-for="(skill, index) in skills"
+        :key="index"
+        class="skill-item"
+      >
         {{ skill.name }} | {{ skill.weight }}
       </li>
     </ol>

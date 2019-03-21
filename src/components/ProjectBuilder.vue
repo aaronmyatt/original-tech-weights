@@ -2,23 +2,50 @@
   <div>
     <form action="">
       <label for="project-name-field">Project Name</label>
-      <input @keyup.enter="createProject()" id="project-name-field" type="text" v-model="name">
+      <input
+        id="project-name-field"
+        v-model="name"
+        type="text"
+        @keyup.enter="createProject()"
+      >
 
       <label for="project-year-field">Project Year</label>
-      <select id="project-year-field" v-model="year">
-        <option :key="year" :value="year" v-for="year in years"> {{ year }}</option>
+      <select
+        id="project-year-field"
+        v-model="year"
+      >
+        <option
+          v-for="year in years"
+          :key="year"
+          :value="year"
+        >
+          {{ year }}
+        </option>
       </select>
 
       <label for="project-status-field">Project Status</label>
-      <select id="project-status-field" v-model="status">
-        <option :key="status" :value="status" v-for="status in statusChoices"> {{ status }}</option>
+      <select
+        id="project-status-field"
+        v-model="status"
+      >
+        <option
+          v-for="status in statusChoices"
+          :key="status"
+          :value="status"
+        >
+          {{ status }}
+        </option>
       </select>
 
       <SkillList
         :skills.sync="skills"
       />
     </form>
-    <button @click="createProject" class="create-project-button" type="submit">
+    <button
+      class="create-project-button"
+      type="submit"
+      @click="createProject"
+    >
       Create Project
     </button>
   </div>
@@ -45,12 +72,6 @@ export default {
     ],
     skills: [],
   }),
-  methods: {
-    createProject() {
-      this.$emit('create-project', this.project);
-      this.skills = [];
-    },
-  },
   computed: {
     project() {
       return {
@@ -68,6 +89,12 @@ export default {
         years.unshift(year);
       }
       return years;
+    },
+  },
+  methods: {
+    createProject() {
+      this.$emit('create-project', this.project);
+      this.skills = [];
     },
   },
 };

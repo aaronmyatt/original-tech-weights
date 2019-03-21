@@ -1,7 +1,11 @@
 <template>
   <div>
     <ol>
-      <li :key="index" class="projects-list" v-for="(project, index) in projects">
+      <li
+        v-for="(project, index) in projects"
+        :key="index"
+        class="projects-list"
+      >
         <ul>
           <li>{{ project.name }}</li>
           <li>{{ project.status }}</li>
