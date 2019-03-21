@@ -64,6 +64,11 @@
 </template>
 
 <script>
+// @todo #40:30m/DEV test adding project successfully
+// @todo #40:30m/DEV test error when skill weights less than 100
+// @todo #40:30m/DEV test multiple skills added
+// @todo #40:30m/DEV test multiple projects added
+
 import SkillList from './SkillList.vue';
 
 export default {
