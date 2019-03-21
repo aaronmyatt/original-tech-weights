@@ -53,7 +53,6 @@
 
 <script>
 // @todo #25:30m/DEV prevent project creation until skill weights equal 100
-// @todo #38:30m/DEV failing test for project creation where weight != 100
 
 
 import SkillList from './SkillList.vue';
