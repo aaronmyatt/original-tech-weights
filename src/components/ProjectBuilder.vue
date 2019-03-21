@@ -5,6 +5,7 @@
       <input
         id="project-name-field"
         v-model="name"
+        required
         type="text"
         @keyup.enter="createProject()"
       >
@@ -13,6 +14,7 @@
       <select
         id="project-year-field"
         v-model="year"
+        required
       >
         <option
           v-for="year in years"
@@ -27,6 +29,7 @@
       <select
         id="project-status-field"
         v-model="status"
+        required
       >
         <option
           v-for="status in statusChoices"
@@ -40,20 +43,20 @@
       <SkillList
         :skills.sync="skills"
       />
+      <button
+        class="create-project-button"
+        type="submit"
+        @click="createProject"
+      >
+        Create Project
+      </button>
     </form>
-    <button
-      class="create-project-button"
-      type="submit"
-      @click="createProject"
-    >
-      Create Project
-    </button>
   </div>
 </template>
 
 <script>
-// @todo #25:30m/DEV prevent project creation until skill weights equal 100
-
+// @todo #38:30m/DEV move to data-test attribute selectors for tests
+// @todo #38:30m/DEV add error message when form submit fails
 
 import SkillList from './SkillList.vue';
 
@@ -93,8 +96,20 @@ export default {
   },
   methods: {
     createProject() {
-      this.$emit('create-project', this.project);
-      this.skills = [];
+      if (this.formValid()) {
+        this.$emit('create-project', this.project);
+        this.skills = [];
+      }
+    },
+    formValid() {
+      return this.name !== '' && this.totalWeightsExceed100();
+    },
+    totalSkillWeights() {
+      const sumSkillWeights = (acc, cur) => cur.weight + acc;
+      return this.skills.reduce(sumSkillWeights, 0);
+    },
+    totalWeightsExceed100() {
+      return this.totalSkillWeights() > 100;
     },
   },
 };

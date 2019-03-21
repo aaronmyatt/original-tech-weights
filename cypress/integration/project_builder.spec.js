@@ -8,11 +8,11 @@ describe('user arrives for the first time', () => {
 });
 
 describe('user must complete form/add skills before creating project', () => {
-  it.skip('adds to the project list', () => {
+  it('adds to the project list', () => {
     rootPage.goToRoot();
     rootPage.projectCreateButton()
       .click();
-    rootPage.projectList()
+    rootPage.projectsList()
       .should('have.length', 0);
   });
 });
