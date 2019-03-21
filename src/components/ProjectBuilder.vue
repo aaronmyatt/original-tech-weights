@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div
+      v-if="error.show"
+      data-test="create-project-failed-error"
+    >
+      ERROR: {{ error.message }}
+    </div>
     <form action="">
       <label for="project-name-field">Project Name</label>
       <input
@@ -43,20 +49,19 @@
       <SkillList
         :skills.sync="skills"
       />
-      <button
-        class="create-project-button"
-        type="submit"
-        @click="createProject"
-      >
-        Create Project
-      </button>
     </form>
+    <button
+      class="create-project-button"
+      type="submit"
+      @click="createProject"
+    >
+      Create Project
+    </button>
   </div>
 </template>
 
 <script>
 // @todo #38:30m/DEV move to data-test attribute selectors for tests
-// @todo #38:30m/DEV add error message when form submit fails
 
 import SkillList from './SkillList.vue';
 
@@ -74,6 +79,10 @@ export default {
       'Retired',
     ],
     skills: [],
+    error: {
+      show: false,
+      message: '',
+    },
   }),
   computed: {
     project() {
@@ -99,6 +108,10 @@ export default {
       if (this.formValid()) {
         this.$emit('create-project', this.project);
         this.skills = [];
+        this.error.show = false;
+      } else {
+        this.error.message = 'Please complete the form and ensure skill weights === 100';
+        this.error.show = true;
       }
     },
     formValid() {

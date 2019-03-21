@@ -5,19 +5,19 @@
       id="skill-name-input"
       v-model="skillName"
       type="text"
-      @keyup.enter="addSkill()"
+      @keyup.enter="addSkill"
     >
     <label for="skill-weight-input"> Skill </label>
     <input
       id="skill-weight-input"
       v-model="skillWeight"
-      type="text"
-      @keyup.enter="addSkill()"
+      type="number"
+      @keyup.enter="addSkill"
     >
     <button
       class="add-new-skill-button"
       type="button"
-      @click="addSkill()"
+      @click="addSkill"
     >
       Add Skill
     </button>
@@ -69,7 +69,7 @@ export default {
       }
     },
     totalSkillWeights() {
-      const sumSkillWeights = (acc, cur) => cur.weight + acc;
+      const sumSkillWeights = (acc, cur) => parseInt(cur.weight, 10) + acc;
       return this.skills.reduce(sumSkillWeights, 0);
     },
     totalWeightsExceed100() {
