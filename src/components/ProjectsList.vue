@@ -4,7 +4,7 @@
       <li
         v-for="(project, index) in projects"
         :key="index"
-        class="projects-list"
+        data-test="projects-list"
       >
         <ul>
           <li>{{ project.name }}</li>

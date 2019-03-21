@@ -11,6 +11,7 @@
       <input
         id="project-name-field"
         v-model="name"
+        data-test="project-name-field"
         required
         type="text"
         @keyup.enter="createProject()"
@@ -20,6 +21,7 @@
       <select
         id="project-year-field"
         v-model="year"
+        data-test="project-year-field"
         required
       >
         <option
@@ -35,6 +37,7 @@
       <select
         id="project-status-field"
         v-model="status"
+        data-test="project-status-field"
         required
       >
         <option
@@ -51,8 +54,8 @@
       />
     </form>
     <button
-      class="create-project-button"
       type="submit"
+      data-test="create-project-button"
       @click="createProject"
     >
       Create Project
@@ -61,8 +64,6 @@
 </template>
 
 <script>
-// @todo #38:30m/DEV move to data-test attribute selectors for tests
-
 import SkillList from './SkillList.vue';
 
 export default {
