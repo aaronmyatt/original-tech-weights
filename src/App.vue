@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="flex flex-col items-center"
+  >
     <h1>Tech Weights</h1>
-    <ProjectBuilder @create-project="createProject"/>
-    <ProjectsList :projects="projects"/>
+    <ProjectBuilder @create-project="createProject" />
+    <ProjectsList :projects="projects" />
   </div>
 </template>
 
@@ -11,7 +14,7 @@
   import ProjectsList from './components/ProjectsList.vue';
 
   export default {
-  name: 'app',
+  name: 'App',
   components: {
     ProjectsList,
     ProjectBuilder,

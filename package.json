@@ -5,10 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "e2e": "vue-cli-service test:e2e"
+    "e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "tailwindcss": "^0.7.4",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "cypress-cucumber-preprocessor": "^1.11.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-tailwind": "^0.4.1",
     "vue-template-compiler": "^2.5.21"
   },
   "cypress-cucumber-preprocessor": {
