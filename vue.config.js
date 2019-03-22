@@ -3,5 +3,10 @@ module.exports = {
     sourceMap: true,
   },
 
-  lintOnSave: undefined,
+  devServer: {
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
+  },
 };
