@@ -1,27 +1,35 @@
 <template>
   <div>
-    <label for="skill-name-input"> Skill </label>
-    <input
-      id="skill-name-input"
-      v-model="skillName"
-      type="text"
-      @keyup.enter="addSkill"
+    <form
+      class="flex flex-col shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      action=""
     >
-    <label for="skill-weight-input"> Skill </label>
-    <input
-      id="skill-weight-input"
-      v-model="skillWeight"
-      type="number"
-      @keyup.enter="addSkill"
-    >
-    <button
-      class="add-new-skill-button"
-      type="button"
-      @click="addSkill"
-    >
-      Add Skill
-    </button>
-    <ol class="skills-list">
+      <label for="skill-name-input"> Skill </label>
+      <input
+        id="skill-name-input"
+        v-model="skillName"
+        class="p-5 rounded-full border"
+        type="text"
+        @keyup.enter="addSkill"
+      >
+      <label for="skill-weight-input"> Skill </label>
+      <input
+        id="skill-weight-input"
+        v-model="skillWeight"
+        class=" p-5 rounded-full border"
+        type="number"
+        @keyup.enter="addSkill"
+      >
+      <button
+        class="add-new-skill-button rounded-full shadow p-5"
+        type="button"
+        @click="addSkill"
+      >
+        Add Skill
+      </button>
+      <p>ERROR: {{ error }}</p>
+    </form>
+    <ul class="skills-list p-5 shadow">
       <li
         v-for="(skill, index) in skills"
         :key="index"
@@ -29,9 +37,10 @@
       >
         {{ skill.name }} | {{ skill.weight }}
       </li>
-    </ol>
-    <p>TOTAL: {{ totalSkillWeights() }}</p>
-    <p>ERROR: {{ error }}</p>
+    </ul>
+    <div class="text-center py-5">
+      <h4>TOTAL: {{ totalSkillWeights() }}</h4>
+    </div>
   </div>
 </template>
 

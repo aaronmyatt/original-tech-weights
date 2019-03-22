@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    class="flex flex-col items-center"
+    class="mx-auto container flex flex-col items-center"
   >
     <h1>Tech Weights</h1>
     <ProjectBuilder @create-project="createProject" />

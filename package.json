@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "ui": "vue ui"
   },
   "dependencies": {
     "tailwindcss": "^0.7.4",

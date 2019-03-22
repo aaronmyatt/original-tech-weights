@@ -1,16 +1,20 @@
 <template>
-  <div>
+  <div class="w-full">
     <div
       v-if="error.show"
       data-test="create-project-failed-error"
     >
       ERROR: {{ error.message }}
     </div>
-    <form action="">
+    <form
+      action=""
+      class="flex flex-col shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    >
       <label for="project-name-field">Project Name</label>
       <input
         id="project-name-field"
         v-model="name"
+        class="rounded-full p-5 border"
         data-test="project-name-field"
         required
         type="text"
@@ -21,6 +25,7 @@
       <select
         id="project-year-field"
         v-model="year"
+        class="rounded-full appearance-none p-5"
         data-test="project-year-field"
         required
       >
@@ -37,6 +42,7 @@
       <select
         id="project-status-field"
         v-model="status"
+        class="rounded-full appearance-none p-5"
         data-test="project-status-field"
         required
       >
@@ -52,14 +58,15 @@
       <SkillList
         :skills.sync="skills"
       />
+      <button
+        type="button"
+        class="shadow p-5"
+        data-test="create-project-button"
+        @click="createProject"
+      >
+        Create Project
+      </button>
     </form>
-    <button
-      type="submit"
-      data-test="create-project-button"
-      @click="createProject"
-    >
-      Create Project
-    </button>
   </div>
 </template>
 
