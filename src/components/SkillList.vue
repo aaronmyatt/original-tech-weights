@@ -49,6 +49,12 @@
 // @todo #25:30m/DEV only show error when necessary, clear error error when resolved
 //  can add an onchange or keyup handler to clear the error
 
+// @todo #25:30m/DEV make skills removable when creating projects
+
+// @todo #25:30m/DEV name and skill weight should be present before creating a skill
+//  currently we can just click "create skill" and an empty skill will be added to
+//  to the list!
+
 export default {
   name: 'SkillList',
   props: {
