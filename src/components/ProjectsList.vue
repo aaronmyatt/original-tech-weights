@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row flex-wrap w-full items-center">
     <div
-      v-for="(project, projectKey) in projects"
+      v-for="(project, projectKey) in getProjects"
       :key="projectKey"
       class="shadow p-5 my-5 w-1/4"
       data-test="projects-list"
@@ -26,11 +26,10 @@
 <script>
 // @todo #19:30m/DEV implement a Project component
 //  this will render project data passed over by the ProjectBuilder
-
 // @todo #25:30m/DEV make projects editable
+// @todo #50:30m/DEV load project fixture only when query param === projects=1
 
-// @todo #1:30m/DEV add dev conveience to prepopulate with 1 project
-//  perhaps using a url query arg?
+import ProjectFixtureGenerator from '../lib/ProjectFixtureGenerator';
 
 export default {
   name: 'ProjectsList',
@@ -38,6 +37,12 @@ export default {
     projects: {
       default: () => [],
       type: Array,
+    },
+  },
+  computed: {
+    getProjects() {
+      const generator = new ProjectFixtureGenerator(3);
+      return generator.process().results();
     },
   },
 };

@@ -8,6 +8,7 @@
     "e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "deploy": "git subtree push --prefix dist origin gh-pages",
+    "test:unit": "vue-cli-service test:unit",
     "ui": "vue ui"
   },
   "dependencies": {
@@ -18,9 +19,13 @@
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-e2e-cypress": "^3.4.1",
     "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-unit-jest": "^3.5.1",
     "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "cypress-cucumber-preprocessor": "^1.11.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
