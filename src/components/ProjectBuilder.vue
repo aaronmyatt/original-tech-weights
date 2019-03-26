@@ -75,6 +75,8 @@
 // @todo #40:30m/DEV test error when skill weights less than 100
 // @todo #40:30m/DEV test multiple skills added
 // @todo #40:30m/DEV test multiple projects added
+// @todo #37:30m/DEV consider what to do when skill weights are < 100
+//  should we throw an error? Or mark the remaining weight as 'undefined'
 
 import SkillList from './SkillList.vue';
 

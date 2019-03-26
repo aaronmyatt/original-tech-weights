@@ -27,7 +27,9 @@
       >
         Add Skill
       </button>
-      <p>ERROR: {{ error }}</p>
+      <p v-if="error !== ''">
+        ERROR: {{ error }}
+      </p>
     </form>
     <ul class="skills-list p-5 shadow">
       <li
