@@ -18,7 +18,7 @@
         data-test="project-name-field"
         required
         type="text"
-        @keyup.enter="createProject()"
+        @keyup.enter="createProject"
       >
 
       <label for="project-year-field">Project Year</label>

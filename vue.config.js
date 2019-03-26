@@ -9,5 +9,7 @@ module.exports = {
       errors: true,
     },
   },
+
   publicPath: 'tech-weights',
+  lintOnSave: true,
 };
