@@ -1,7 +1,6 @@
+const join = require('path').join;
+const tailwindJS = join(__dirname, 'tailwind.js');
+
 module.exports = {
-  plugins: {
-    tailwindcss: './tailwind.config.js',
-    'vue-cli-plugin-tailwind/purgecss': {},
-    autoprefixer: {},
-  },
+  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
 };

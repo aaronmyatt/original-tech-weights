@@ -1,31 +1,22 @@
-# tech-weights
+# nuxt-weights
 
-[![PDD status](http://www.0pdd.com/svg?name=aaronmyatt/tech-weights)](http://www.0pdd.com/svg?name=aaronmyatt/tech-weights)
+> My super-duper Nuxt.js project
 
-## Project setup
-```
-yarn install
-```
+## Build Setup
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+``` bash
+# install dependencies
+$ yarn install
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-### Run your tests
-```
-yarn run test
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
