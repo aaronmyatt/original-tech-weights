@@ -1,10 +1,13 @@
 import pkg from './package';
 
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? { router: { base: '/tech-weights/' } }
+    : {};
+
 export default {
   mode: 'universal',
-  router: {
-    base: '/tech-weights/'
-  },
+  ...routerBase,
 
   /*
    ** Headers of the page
