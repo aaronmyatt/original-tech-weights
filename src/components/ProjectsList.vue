@@ -27,23 +27,30 @@
 // @todo #19:30m/DEV implement a Project component
 //  this will render project data passed over by the ProjectBuilder
 // @todo #25:30m/DEV make projects editable
-// @todo #50:30m/DEV load project fixture only when query param === projects=1
 
 import ProjectFixtureGenerator from '../lib/ProjectFixtureGenerator';
+import utils from '../lib/utils';
 
 export default {
   name: 'ProjectsList',
   props: {
     projects: {
-      default: () => [],
+      default: () => [123],
       type: Array,
     },
   },
+  data: () => ({
+    projectFixtures: [],
+  }),
   computed: {
     getProjects() {
-      const generator = new ProjectFixtureGenerator(3);
-      return generator.process().results();
+      return this.projects.concat(this.projectFixtures);
     },
+  },
+  mounted() {
+    const generateCount = utils.getParameterByName('projects', window.location.href);
+    const generator = new ProjectFixtureGenerator(generateCount);
+    this.projectFixtures = generator.process().results();
   },
 };
 </script>

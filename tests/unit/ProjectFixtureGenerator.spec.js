@@ -61,4 +61,16 @@ describe('ProjectFixtureGenerator', () => {
       expect(twoProjects.results()).toContainEqual(project);
     });
   });
+
+  describe('parameters: "1" (string)', () => {
+    let project;
+    beforeEach(() => {
+      project = new ProjectFixtureGenerator('1');
+    });
+
+    test('returns one project fixture', () => {
+      project.process();
+      expect(project.results()).toHaveLength(1);
+    });
+  });
 });

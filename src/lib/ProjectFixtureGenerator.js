@@ -36,4 +36,5 @@ class ProjectFixtureGenerator {
   }
 }
 
+
 export default ProjectFixtureGenerator;
